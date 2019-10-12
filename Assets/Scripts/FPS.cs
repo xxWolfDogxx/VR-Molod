@@ -35,6 +35,7 @@ public class FPS : MonoBehaviour
     // Use this for initialization
     private void Start()
     {
+        enabled = Application.isEditor;
         m_Rigid = GetComponent<Rigidbody>();
     }
 
@@ -42,8 +43,8 @@ public class FPS : MonoBehaviour
     public void Update()
     {
 
-        m_MovX = Input.GetAxis("Horizontal");
-        m_MovY = Input.GetAxis("Vertical");
+        m_MovX = 0;// Input.GetAxis("Horizontal");
+        m_MovY = 0;// Input.GetAxis("Vertical");
 
         m_moveHorizontal = transform.right * m_MovX;
         m_movVertical = transform.forward * m_MovY;
