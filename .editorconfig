@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# UNT0008: Unity objects should not use null propagation
+dotnet_diagnostic.UNT0008.severity = none

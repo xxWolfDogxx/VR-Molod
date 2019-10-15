@@ -16,8 +16,8 @@ TagManager:
   - Player
   - Walkable
   - Item
-  - 
-  - 
+  - CurrentDraggable
+  - Interactive
   - 
   - 
   - 

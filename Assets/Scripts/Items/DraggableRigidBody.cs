@@ -1,26 +1,23 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class DraggableRigidBody : MonoBehaviour
 {
-    [SerializeField] private float lerpFactor = 0.5f;
+    private bool isActiveDrag;
 
-    public void Drag (Transform target)
+    public void Drag ()
     {
-        StartCoroutine(LoopDrag(target));
+        isActiveDrag = true;
+        GetComponent<DragRigidbody>().HandleInputBegin();
     }
 
     public void Drop ()
     {
-        StopCoroutine(LoopDrag());
+        isActiveDrag = false;
+        GetComponent<DragRigidbody>().HandleInputEnd();
     }
 
-    private IEnumerator LoopDrag(Transform target = null)
+    private void Update()
     {
-        while (true)
-        {
-            yield return null;
-            transform.position = Vector3.Lerp(transform.position, target.position, lerpFactor);
-        }
+        if (isActiveDrag) GetComponent<DragRigidbody>().HandleInput();
     }
 }

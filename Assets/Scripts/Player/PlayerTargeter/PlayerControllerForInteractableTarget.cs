@@ -1,30 +1,55 @@
-﻿using System.Linq;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerControllerForInteractableTarget : MonoBehaviour
 {
-    [SerializeField] private KeyCode keyCode = KeyCode.Mouse0;
-    private InteractableTarget itemTargetOld = null;
+    public InteractableTarget ItemTargetCurrent { get; private set; }
+    private bool isFocusLocked;
+
+    public void LockFocus()
+    {
+        isFocusLocked = true;
+    }
+
+    public void UnlockFocus()
+    {
+        isFocusLocked = false;
+    }
 
     void Update()
     {
-        var result = Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out var hit, 3f);
-        if (!result) return;
+        if (isFocusLocked) return;
+
+        var result = Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out var hit, 2f);
+        if (!result)
+        {
+            LoseFocusItem();
+            return;
+        }
 
         var itemTarget = hit.transform.GetComponent<InteractableTarget>();
-        CheckIfTargetIsDifferent();
-        if (itemTarget == null) return;
+        if (itemTarget == null)
+        {
+            LoseFocusItem();
+            return;
+        }
 
-        if (Input.GetKeyDown(keyCode)) itemTarget.Interact();
+        CheckIfTargetIsDifferent();
+        if (PlayerInput.MainButtonDown) itemTarget.Interact();
 
         void CheckIfTargetIsDifferent ()
         {
-            if (itemTarget != itemTargetOld)
+            if (itemTarget != ItemTargetCurrent)
             {
-                itemTargetOld?.Unwatch();
+                ItemTargetCurrent?.Unwatch();
                 itemTarget?.Watch();
             }
-            itemTargetOld = itemTarget;
+            ItemTargetCurrent = itemTarget;
+        }
+
+        void LoseFocusItem ()
+        {
+            ItemTargetCurrent?.Unwatch();
+            ItemTargetCurrent = null;
         }
     }
 }
