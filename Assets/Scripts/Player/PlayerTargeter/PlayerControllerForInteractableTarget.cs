@@ -26,7 +26,7 @@ public class PlayerControllerForInteractableTarget : MonoBehaviour
             return;
         }
 
-        var itemTarget = hit.transform.GetComponent<InteractableTarget>();
+        var itemTarget = hit.transform.GetComponentInChildren<InteractableTarget>();
         if (itemTarget == null)
         {
             LoseFocusItem();
