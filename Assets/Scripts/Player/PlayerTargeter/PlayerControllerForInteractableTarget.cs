@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using UnityEngine;
 
 public class PlayerControllerForInteractableTarget : MonoBehaviour
 {
@@ -34,21 +35,21 @@ public class PlayerControllerForInteractableTarget : MonoBehaviour
         }
 
         CheckIfTargetIsDifferent();
-        if (PlayerInput.MainButtonDown) itemTarget.Interact();
+        if (PlayerInput.MainButtonDown) itemTarget.GetComponentsInChildren<InteractableTarget>().ToList().ForEach(a => a.Interact());
 
         void CheckIfTargetIsDifferent ()
         {
             if (itemTarget != ItemTargetCurrent)
             {
-                ItemTargetCurrent?.Unwatch();
-                itemTarget?.Watch();
+                if (ItemTargetCurrent) ItemTargetCurrent.Unwatch();
+                if (itemTarget) itemTarget?.Watch();
             }
             ItemTargetCurrent = itemTarget;
         }
 
         void LoseFocusItem ()
         {
-            ItemTargetCurrent?.Unwatch();
+            if (ItemTargetCurrent) ItemTargetCurrent.Unwatch();
             ItemTargetCurrent = null;
         }
     }
