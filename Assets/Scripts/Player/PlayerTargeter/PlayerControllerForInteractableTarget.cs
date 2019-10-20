@@ -19,15 +19,18 @@ public class PlayerControllerForInteractableTarget : MonoBehaviour
     void Update()
     {
         if (isFocusLocked) return;
-
-        var result = Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out var hit, 2f);
-        if (!result)
+        InteractableTarget itemTarget = null;
+        var hits = Physics.RaycastAll(transform.position, transform.TransformDirection(Vector3.forward)).OrderBy(a => a.distance);
+        foreach (var hit in hits)
         {
-            LoseFocusItem();
-            return;
+            itemTarget = hit.transform.GetComponentInChildren<InteractableTarget>();
+            if (itemTarget)
+            { 
+                if (!itemTarget.enabled) itemTarget = null;
+                else break;
+            }
         }
 
-        var itemTarget = hit.transform.GetComponentInChildren<InteractableTarget>();
         if (itemTarget == null)
         {
             LoseFocusItem();

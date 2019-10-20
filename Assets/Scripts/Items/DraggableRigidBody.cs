@@ -1,8 +1,9 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class DraggableRigidBody : MonoBehaviour
 {
-    private bool isActiveDrag;
+    public bool isActiveDrag;
 
     public void Drag ()
     {
@@ -14,6 +15,14 @@ public class DraggableRigidBody : MonoBehaviour
     {
         isActiveDrag = false;
         GetComponent<DragRigidbody>().HandleInputEnd();
+        StartCoroutine(Wait());
+    }
+
+    private IEnumerator Wait ()
+    {
+        GetComponent<Rigidbody>().isKinematic = true;
+        yield return null;
+        GetComponent<Rigidbody>().isKinematic = false;
     }
 
     private void Update()

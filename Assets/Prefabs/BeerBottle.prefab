@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 1017378968843089579}
   - component: {fileID: 6682256105052137647}
   - component: {fileID: 6911837205288288713}
+  - component: {fileID: 5310952048598431664}
   m_Layer: 12
   m_Name: BeerBottle
   m_TagString: Untagged
@@ -35,7 +36,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.9474597, y: 2.9474578, z: 2.947461}
-  m_Children: []
+  m_Children:
+  - {fileID: 2808622238802371676}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -111,10 +113,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.026246678
-  m_Height: 0.13383359
+  m_Radius: 0.01545607
+  m_Height: 0.12191826
   m_Direction: 2
-  m_Center: {x: -0.0008546508, y: 0, z: 0.058356866}
+  m_Center: {x: 0.00084912754, y: 0, z: 0.059207954}
 --- !u!114 &2399571127457296028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,6 +176,7 @@ MonoBehaviour:
   unityEvent:
     m_PersistentCalls:
       m_Calls: []
+  delay: 0
 --- !u!114 &6911837205288288713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,3 +189,61 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e63b5e12f3a69ca4181c5acb04c02104, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isActiveDrag: 0
+--- !u!114 &5310952048598431664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3631898269001037219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ceda0d94e6b35b4b80a891e10f2d413, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &5984005128778956336
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2808622238802371676}
+  - component: {fileID: 1038675496926994256}
+  m_Layer: 12
+  m_Name: Trigger
+  m_TagString: Bottle
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2808622238802371676
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5984005128778956336}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3631898269001329027}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1038675496926994256
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5984005128778956336}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.013413164
+  m_Height: 0.07062333
+  m_Direction: 2
+  m_Center: {x: 0.00004070891, y: 0, z: 0.038081888}

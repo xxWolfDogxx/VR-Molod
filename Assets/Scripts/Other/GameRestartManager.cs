@@ -29,4 +29,9 @@ public class GameRestartManager : MonoBehaviour
         isRestartAvaible = false;
         unityEvent.Invoke();
     }
+
+    public void ForceRestart()
+    {
+        unityEvent.Invoke();
+    }
 }
