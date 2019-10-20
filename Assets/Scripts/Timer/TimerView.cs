@@ -8,6 +8,7 @@ public class TimerView : MonoBehaviour
 
     private void Awake()
     {
+        if (timer == null) return;
         timer.TimeWasChanged += (time) =>
         {
             var t = TimeSpan.FromSeconds(time);
