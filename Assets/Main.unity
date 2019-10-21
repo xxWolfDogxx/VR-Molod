@@ -1123,7 +1123,7 @@ GameObject:
   - component: {fileID: 238810408}
   - component: {fileID: 238810409}
   - component: {fileID: 238810410}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TaskWashedDish
   m_TagString: Dishes
   m_Icon: {fileID: 0}
@@ -1354,7 +1354,7 @@ GameObject:
   - component: {fileID: 374548213}
   - component: {fileID: 374548215}
   - component: {fileID: 374548214}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TaskCollectToys
   m_TagString: Toy
   m_Icon: {fileID: 0}
@@ -2802,8 +2802,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 4.7428895e+30, y: 7.215475e+22, z: 7.2249553e+28,
-    w: 2.480597e+27}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 9e-44}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -5481,13 +5480,28 @@ GameObject:
   - component: {fileID: 1181745852}
   - component: {fileID: 1178878620}
   - component: {fileID: 1179975772}
-  m_Layer: 9
+  - component: {fileID: 1182244509}
+  m_Layer: 14
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!64 &1182244509
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1182244508}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300034, guid: ffb6c9723d2d96b4c8004695d32c3bf1, type: 3}
 --- !u!1 &1182244510
 GameObject:
   m_ObjectHideFlags: 0
@@ -5637,7 +5651,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 430644, guid: 16e5aca9861e75b43aad74b12103c777, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.742
+      value: 0.87
       objectReference: {fileID: 0}
     - target: {fileID: 430644, guid: 16e5aca9861e75b43aad74b12103c777, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5675,7 +5689,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 179.998
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 2091311957, guid: 16e5aca9861e75b43aad74b12103c777, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2091311957, guid: 16e5aca9861e75b43aad74b12103c777, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 2091311958, guid: 16e5aca9861e75b43aad74b12103c777, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 16e5aca9861e75b43aad74b12103c777, type: 3}
 --- !u!4 &1215779394 stripped
 Transform:
@@ -9901,7 +9924,7 @@ GameObject:
   - component: {fileID: 1810245649}
   - component: {fileID: 1810245651}
   - component: {fileID: 1810245650}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TaskCollectBooks
   m_TagString: Book
   m_Icon: {fileID: 0}
@@ -10839,7 +10862,7 @@ GameObject:
   - component: {fileID: 1972321101}
   - component: {fileID: 1972321102}
   - component: {fileID: 1972321100}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TaskCollectBottles
   m_TagString: Bottle
   m_Icon: {fileID: 0}
@@ -11335,8 +11358,8 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1215779393}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &2091311957
-MeshCollider:
+--- !u!136 &2091311959
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -11345,10 +11368,10 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 0}
+  m_Radius: 0.14038014
+  m_Height: 1.1079534
+  m_Direction: 1
+  m_Center: {x: 0.00000007991932, y: 0.51249486, z: 0.012065561}
 --- !u!1 &2092356842
 GameObject:
   m_ObjectHideFlags: 0
@@ -11731,7 +11754,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 635893849352626207}
   m_LocalRotation: {x: -0.50000006, y: 0.49999997, z: 0.50000006, w: 0.49999997}
-  m_LocalPosition: {x: -1.698, y: 0.613, z: 1.3949999}
+  m_LocalPosition: {x: -1.7165, y: 0.613, z: 1.3949999}
   m_LocalScale: {x: 100.000015, y: 100, z: 100}
   m_Children:
   - {fileID: 94566241342052618}
