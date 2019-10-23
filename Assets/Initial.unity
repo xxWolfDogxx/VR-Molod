@@ -184,7 +184,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 47a4d9d7f96cf5b49ba745381c29d8a8, type: 2}
+  - {fileID: 2100000, guid: 285868858ece9d84ba36d0027e26b03b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -278,58 +278,6 @@ PrefabInstance:
     - target: {fileID: 8985492077030695989, guid: 83e5e35c5c99df94282e3ee7d9311427,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8777354169235876246, guid: 83e5e35c5c99df94282e3ee7d9311427,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 112
-      objectReference: {fileID: 0}
-    - target: {fileID: 5288356814753349198, guid: 83e5e35c5c99df94282e3ee7d9311427,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 1355
-      objectReference: {fileID: 0}
-    - target: {fileID: 5288356814753349198, guid: 83e5e35c5c99df94282e3ee7d9311427,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 223
-      objectReference: {fileID: 0}
-    - target: {fileID: 705819020, guid: 83e5e35c5c99df94282e3ee7d9311427, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 89
-      objectReference: {fileID: 0}
-    - target: {fileID: 1396992295, guid: 83e5e35c5c99df94282e3ee7d9311427, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 1791
-      objectReference: {fileID: 0}
-    - target: {fileID: 1396992295, guid: 83e5e35c5c99df94282e3ee7d9311427, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 89
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985492076912790108, guid: 83e5e35c5c99df94282e3ee7d9311427,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.081
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985492076912790108, guid: 83e5e35c5c99df94282e3ee7d9311427,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.11
-      objectReference: {fileID: 0}
-    - target: {fileID: 2860524955938118887, guid: 83e5e35c5c99df94282e3ee7d9311427,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4383152119256631685, guid: 83e5e35c5c99df94282e3ee7d9311427,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4383152119256631685, guid: 83e5e35c5c99df94282e3ee7d9311427,
-        type: 3}
-      propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
